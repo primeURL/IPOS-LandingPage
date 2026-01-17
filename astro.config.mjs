@@ -18,7 +18,7 @@ export default defineConfig({
       lastmod: new Date(),
     })
   ],
-  output: 'static', // Static site generation for maximum SEO performance
+  output: 'static',
   build: {
     inlineStylesheets: 'auto',
     assets: '_assets'
@@ -26,7 +26,9 @@ export default defineConfig({
   compressHTML: true,
   vite: {
     build: {
-      cssMinify: 'lightningcss',
+      // Remove lightningcss minification to avoid Vercel deployment issues
+      // Use default CSS minifier instead
+      cssMinify: true,
       rollupOptions: {
         output: {
           manualChunks: {
