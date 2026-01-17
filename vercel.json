@@ -4,12 +4,12 @@
     "redirects": [
         {
             "source": "/dashboard",
-            "destination": "https://<YOUR_DEPLOYED_FRONTEND_URL>/dashboard",
+            "destination": "https://ipos-frontend-six.vercel.app/dashboard",
             "permanent": false
         },
         {
             "source": "/dashboard/:path*",
-            "destination": "https://<YOUR_DEPLOYED_FRONTEND_URL>/dashboard/:path*",
+            "destination": "https://ipos-frontend-six.vercel.app/dashboard/:path*",
             "permanent": false
         }
     ]
