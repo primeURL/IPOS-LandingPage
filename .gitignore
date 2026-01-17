@@ -6,6 +6,8 @@ dist/
 # dependencies
 node_modules/
 
+*.md
+
 # logs
 npm-debug.log*
 yarn-debug.log*
