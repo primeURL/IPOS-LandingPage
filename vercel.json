@@ -1,0 +1,16 @@
+{
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "redirects": [
+        {
+            "source": "/dashboard",
+            "destination": "https://<YOUR_DEPLOYED_FRONTEND_URL>/dashboard",
+            "permanent": false
+        },
+        {
+            "source": "/dashboard/:path*",
+            "destination": "https://<YOUR_DEPLOYED_FRONTEND_URL>/dashboard/:path*",
+            "permanent": false
+        }
+    ]
+}

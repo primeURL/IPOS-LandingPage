@@ -1,16 +1,103 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import CTA from '../components/CTA.astro';
+import AuthCheck from '../components/AuthCheck';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout 
+  title="Interview Prep OS - Master Technical Interviews with AI-Powered Planning"
+  description="Transform your interview preparation with IPOS - an intelligent platform featuring automated study plans, progress tracking, spaced repetition, and personalized learning paths for technical interviews."
+>
+  <!-- Auth check component - redirects if logged in -->
+  <AuthCheck client:only="react" />
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+            <span class="text-white font-bold text-xl">IP</span>
+          </div>
+          <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">
+            Interview Prep OS
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#features" class="text-slate-300 hover:text-white transition-colors">Features</a>
+          <a href="#cta" class="text-slate-300 hover:text-white transition-colors">Pricing</a>
+          <a href="#" class="text-slate-300 hover:text-white transition-colors">Docs</a>
+          <a 
+            href="/dashboard" 
+            class="px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-indigo-500/50 transition-all hover:scale-105"
+          >
+            Get Started
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button 
+          id="mobile-menu-button"
+          class="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+          aria-label="Toggle menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-slate-950/95 backdrop-blur-lg">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#features" class="block px-4 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">Features</a>
+        <a href="#cta" class="block px-4 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">Pricing</a>
+        <a href="#" class="block px-4 py-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">Docs</a>
+        <a 
+          href="/dashboard" 
+          class="block px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg font-semibold text-center hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
+        >
+          Get Started
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main>
+    <Hero />
+    <Features />
+    <CTA />
+  </main>
+
+  <!-- Mobile menu toggle script -->
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileMenuLinks = mobileMenu?.querySelectorAll('a');
+    mobileMenuLinks?.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenuButton?.contains(e.target as Node) && !mobileMenu?.contains(e.target as Node)) {
+        mobileMenu?.classList.add('hidden');
+      }
+    });
+  </script>
+</Layout>

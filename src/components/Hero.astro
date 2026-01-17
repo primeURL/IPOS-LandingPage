@@ -1,0 +1,166 @@
+---
+// Hero section with animated gradient background and CTA
+---
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
+  <!-- Animated background gradient -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute -inset-[10px] opacity-50">
+      <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+      <div class="absolute top-0 -right-4 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+      <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+    </div>
+  </div>
+
+  <!-- Grid pattern overlay -->
+  <div class="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto text-center">
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8 animate-fade-in-up">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+      </span>
+      <span class="text-sm font-medium text-emerald-300">AI-Powered Interview Preparation</span>
+    </div>
+
+    <!-- Main heading -->
+    <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 animate-fade-in-up animation-delay-200">
+      <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-purple-200">
+        Master Technical
+      </span>
+      <br />
+      <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+        Interviews
+      </span>
+    </h1>
+
+    <!-- Subheading -->
+    <p class="text-xl sm:text-2xl lg:text-3xl text-slate-300 mb-4 max-w-4xl mx-auto font-light leading-relaxed animate-fade-in-up animation-delay-400">
+      Your intelligent companion for systematic interview preparation
+    </p>
+    
+    <p class="text-base sm:text-lg text-slate-400 mb-12 max-w-2xl mx-auto animate-fade-in-up animation-delay-600">
+      Automated study plans • Progress tracking • Spaced repetition • Smart notes
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animation-delay-800">
+      <a 
+        href="/dashboard" 
+        class="group relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl font-semibold text-lg shadow-2xl shadow-indigo-500/50 hover:shadow-indigo-500/70 transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+      >
+        <span>Get Started Free</span>
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+      
+      <a 
+        href="#features" 
+        class="group inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all duration-300 hover:scale-105"
+      >
+        <span>Learn More</span>
+        <svg class="w-5 h-5 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Stats -->
+    <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto animate-fade-in-up animation-delay-1000">
+      <div class="text-center">
+        <div class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">10K+</div>
+        <div class="text-sm text-slate-400 mt-2">Active Users</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">95%</div>
+        <div class="text-sm text-slate-400 mt-2">Success Rate</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-rose-400">50K+</div>
+        <div class="text-sm text-slate-400 mt-2">Plans Created</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-orange-400">4.8★</div>
+        <div class="text-sm text-slate-400 mt-2">User Rating</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>
+
+<style>
+  @keyframes blob {
+    0%, 100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+
+  .bg-grid-white\/\[0\.02\] {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  }
+</style>
