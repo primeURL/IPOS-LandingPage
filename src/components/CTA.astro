@@ -1,5 +1,6 @@
 ---
 // Call-to-action section
+const dashboardUrl = import.meta.env.PUBLIC_DASHBOARD_URL || 'http://localhost:3000';
 ---
 
 <section id="cta" class="relative py-24 px-4 sm:px-6 lg:px-8">
@@ -35,7 +36,7 @@
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
         <a 
-          href="/dashboard" 
+          href={dashboardUrl}
           class="group relative inline-flex items-center gap-2 px-10 py-5 bg-white text-blue-600 rounded-xl font-bold text-lg shadow-2xl hover:shadow-white/50 transition-all duration-300 hover:scale-105 hover:-translate-y-1"
         >
           <span>Start Free Now</span>
@@ -117,7 +118,7 @@
         <h4 class="font-semibold mb-4 text-white">Product</h4>
         <ul class="space-y-2 text-slate-400">
           <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
-          <li><a href="/dashboard" class="hover:text-white transition-colors">Dashboard</a></li>
+          <li><a href={dashboardUrl} class="hover:text-white transition-colors">Dashboard</a></li>
           <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
           <li><a href="#" class="hover:text-white transition-colors">Roadmap</a></li>
         </ul>
