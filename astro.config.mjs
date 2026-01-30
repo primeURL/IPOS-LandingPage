@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://your-domain.com', // Update with your actual domain
+  site: 'https://prepspacedev.space', // Update with your actual domain
   integrations: [
     react(),
     tailwind({

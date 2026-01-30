@@ -4,9 +4,9 @@
 FROM node:20-alpine AS builder
 
 # Build arguments for environment variables
-ARG PUBLIC_DASHBOARD_URL=http://ug8o4k44o40kg4wo0cocws4o.15.206.7.92.sslip.io
-ARG PUBLIC_API_URL=http://localhost:8000
-ARG PUBLIC_SITE_URL=http://localhost:4321
+ARG PUBLIC_DASHBOARD_URL
+ARG PUBLIC_API_URL
+ARG PUBLIC_SITE_URL
 
 WORKDIR /app
 
